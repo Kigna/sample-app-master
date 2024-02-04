@@ -27,22 +27,9 @@ services:
       - "3306:3306"
     networks:
       - mon-reseau
-    command: ['--init-file', '/docker-entrypoint-initdb.d/init.sql']
-    volumes:
-        - ./init.sql:/docker-entrypoint-initdb.d/init.sql  
-
-  # phpmyadmin:
-  #   image: phpmyadmin/phpmyadmin
-  #   container_name: phpmyadmin-docker
-  #   environment:
-  #     PMA_HOST: db
-  #     PMA_PORT: 3307
-  #   ports:
-  #     - "8081:80"
-  #   depends_on:
-  #     - db
-  #   networks:
-  #     - mon-reseau
+    # command: ['--init-file', '/docker-entrypoint-initdb.d/init.sql']
+    # volumes:
+    #     - ./init.sql:/docker-entrypoint-initdb.d/init.sql  
 
 networks:
   mon-reseau:
